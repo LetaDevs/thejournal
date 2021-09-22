@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Roboto:wght@300;400;500;700&family=Vollkorn:wght@400;500;700&display=swap");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,4 +12,175 @@ html {
   padding: 0;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+}
+
+.header {
+  width: 98%;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-bottom: 5px solid #4a4a4a;
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 95%;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    width: 1200px;
+  }
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.header__logo-text {
+  font-size: 50px;
+  font-family: 'Cookie', cursive;
+}
+
+.header__extras {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .header__extras {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.header__extras form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__extras-search {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .header__extras-search {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 50%;
+  }
+}
+
+.header__extras-search-input {
+  width: 70%;
+  border: 1px solid #000;
+  outline: none;
+  padding: 0 10px;
+}
+
+@media (min-width: 992px) {
+  .header__extras-search-input {
+    width: 80%;
+  }
+}
+
+.header__extras-search-btn {
+  background-color: #000;
+  border: 1px solid #000;
+  outline: none;
+  padding: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header__extras-search-btn:hover {
+  cursor: pointer;
+}
+
+.header__extras-search-icon {
+  color: #fff;
+}
+
+.header__extras-date {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+@media (min-width: 992px) {
+  .header__extras-date {
+    width: 20%;
+  }
+}
+
+.header__extras-weather {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+@media (min-width: 992px) {
+  .header__extras-weather {
+    width: 20%;
+    text-align: right;
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__link-active {
+  font-weight: bold;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
+  font-family: 'Roboto', sans-serif;
 }
