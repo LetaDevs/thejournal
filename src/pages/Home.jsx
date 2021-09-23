@@ -17,6 +17,7 @@ import {
 import Criptos from '../components/Criptos';
 import Safari from '../components/Safari';
 import Tech from '../components/Tech';
+import Footer from '../components/Footer';
 
 const Home = () => {
 	const {dispatch} = useContext(noticiasContext);
@@ -86,6 +87,7 @@ const Home = () => {
 			<Safari />
 			<Seccion category='entertainment' />
 			<Tech />
+			<Footer />
 		</div>
 	);
 };
