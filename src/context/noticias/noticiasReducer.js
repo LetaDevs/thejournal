@@ -4,6 +4,7 @@ import {
 	NOTICIAS_BUSINESS,
 	NOTICIAS_HEALTH,
 	NOTICIAS_ENTERTAINMENT,
+	NOTICIAS_TECHNOLOGY,
 } from '../../type';
 
 export default (state, action) => {
@@ -32,6 +33,11 @@ export default (state, action) => {
 			return {
 				...state,
 				entertainment: action.payload,
+			};
+		case NOTICIAS_TECHNOLOGY:
+			return {
+				...state,
+				technology: action.payload,
 			};
 
 		default:

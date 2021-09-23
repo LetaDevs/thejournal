@@ -1,0 +1,17 @@
+.cripto {
+	display: flex;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+
+	img {
+		width: 50px;
+		margin-right: 5px;
+	}
+
+	&__symbols {
+		font-size: 14px;
+	}
+	&__price {
+		font-size: 14px;
+	}
+}

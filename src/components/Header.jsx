@@ -89,7 +89,7 @@ const Header = () => {
 				</div>
 				<div className='header__extras-weather'>
 					<img src={climaIcon} alt='clima icon' />
-					<p>{`${userData.city} - ${userData.country} ${clima.temp + 2}°C`}</p>
+					<p>{`${userData.city} - ${userData.country} ${clima.temp + 1}°C`}</p>
 				</div>
 			</div>
 		</header>

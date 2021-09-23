@@ -6,8 +6,17 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import Seccion from '../components/Seccion';
 
-import {NOTICIAS_GENERAL, NOTICIAS_SPORTS, NOTICIAS_BUSINESS, NOTICIAS_HEALTH, NOTICIAS_ENTERTAINMENT} from '../type';
+import {
+	NOTICIAS_GENERAL,
+	NOTICIAS_SPORTS,
+	NOTICIAS_BUSINESS,
+	NOTICIAS_HEALTH,
+	NOTICIAS_ENTERTAINMENT,
+	NOTICIAS_TECHNOLOGY,
+} from '../type';
 import Criptos from '../components/Criptos';
+import Safari from '../components/Safari';
+import Tech from '../components/Tech';
 
 const Home = () => {
 	const {dispatch} = useContext(noticiasContext);
@@ -21,15 +30,16 @@ const Home = () => {
 			const business = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=business`;
 			const health = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=health`;
 			const entertainment = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=entertainment`;
+			const technology = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=technology`;
 			const consulta = await Promise.all([
 				fetch(general),
 				fetch(sports),
 				fetch(business),
 				fetch(health),
 				fetch(entertainment),
+				fetch(technology),
 			]);
 			const resultado = await Promise.all(consulta.map((dato) => dato.json()));
-			console.log(resultado);
 
 			dispatch({
 				type: NOTICIAS_GENERAL,
@@ -55,6 +65,11 @@ const Home = () => {
 				type: NOTICIAS_ENTERTAINMENT,
 				payload: resultado[4].noticias,
 			});
+
+			dispatch({
+				type: NOTICIAS_TECHNOLOGY,
+				payload: resultado[5].noticias,
+			});
 		};
 		obtenerNoticias();
 	}, [country]);
@@ -67,6 +82,10 @@ const Home = () => {
 			<Banner />
 			<Seccion category='business' />
 			<Criptos />
+			<Seccion category='health' />
+			<Safari />
+			<Seccion category='entertainment' />
+			<Tech />
 		</div>
 	);
 };

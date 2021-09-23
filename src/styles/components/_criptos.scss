@@ -1,0 +1,19 @@
+.criptos {
+	display: none;
+	@include mq($ipadPro) {
+		display: block;
+	}
+
+	&__container {
+		width: $ipadProWidth;
+		margin: 0 auto;
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 2px solid $grayOne;
+
+		@include mq($desktop) {
+			width: $desktopWidth;
+		}
+	}
+}

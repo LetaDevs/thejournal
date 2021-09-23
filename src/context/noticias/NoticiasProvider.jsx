@@ -9,6 +9,7 @@ const initialState = {
 	business: [],
 	health: [],
 	entertainment: [],
+	technology: [],
 };
 
 const NoticiasProvider = (props) => {
@@ -22,6 +23,7 @@ const NoticiasProvider = (props) => {
 				business: state.business,
 				health: state.health,
 				entertainment: state.entertainment,
+				technology: state.technology,
 				dispatch,
 			}}>
 			{props.children}
