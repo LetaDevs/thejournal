@@ -77,11 +77,11 @@ const Home = () => {
 	return (
 		<div className='home'>
 			<Header />
+			<Criptos />
 			<Main />
 			<Seccion category='sports' />
 			<Banner />
 			<Seccion category='business' />
-			<Criptos />
 			<Seccion category='health' />
 			<Safari />
 			<Seccion category='entertainment' />

@@ -20,6 +20,7 @@
 	&__title {
 		line-height: 1.2;
 		margin: 10px 0;
+		font-size: 20px;
 	}
 	&__description {
 		margin: 10px 0;
@@ -31,5 +32,9 @@
 	&--border {
 		padding-bottom: 10px;
 		border-bottom: 1px solid $grayTwo;
+	}
+
+	img {
+		min-width: 100%;
 	}
 }

@@ -252,9 +252,10 @@ img {
 @media (min-width: 992px) {
   .main__section-two {
     padding: 20px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
     gap: 20px;
   }
 }
@@ -287,6 +288,7 @@ img {
 .noticia__title {
   line-height: 1.2;
   margin: 10px 0;
+  font-size: 20px;
 }
 
 .noticia__description {
@@ -300,6 +302,10 @@ img {
 .noticia--border {
   padding-bottom: 10px;
   border-bottom: 1px solid #bbb;
+}
+
+.noticia img {
+  min-width: 100%;
 }
 
 .section__container {
@@ -553,4 +559,80 @@ img {
         grid-template-columns: repeat(5, 1fr);
     gap: 10px;
   }
+}
+
+.oferta {
+  background-color: #000;
+  width: 100%;
+  height: 20%;
+  position: fixed;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.oferta__contenido {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.oferta__contenido h4 {
+  font-size: 30px;
+}
+
+.oferta__contenido p {
+  font-size: 20px;
+}
+
+.oferta__precio {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.oferta__btn {
+  background-color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin-top: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.oferta__btn:hover {
+  letter-spacing: 1.2px;
+}
+
+.oferta__cerrar {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.oferta__cerrar:hover {
+  cursor: pointer;
 }

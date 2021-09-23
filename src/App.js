@@ -4,12 +4,14 @@ import NoticiasProvider from './context/noticias/NoticiasProvider';
 
 import moment from 'moment';
 import 'moment/locale/es';
+import Oferta from './components/Oferta';
 moment.locale('es');
 
 function App() {
 	return (
 		<Router>
 			<NoticiasProvider>
+				<Oferta />
 				<div>
 					<Switch>
 						<Route exact path='/'>
