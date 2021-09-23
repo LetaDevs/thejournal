@@ -1,3 +1,3 @@
 # The Journal app
 
-[Live demo](http://google.com)
+[Live demo](https://thejournalsite.netlify.app/co)

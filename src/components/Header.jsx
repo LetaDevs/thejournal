@@ -42,7 +42,7 @@ const Header = ({setBusqueda}) => {
 		if (Object.keys(clima).length === 0) return;
 
 		const obtenerIcon = async () => {
-			const url = `http://openweathermap.org/img/wn/${clima.icon}@2x.png`;
+			const url = `https://openweathermap.org/img/wn/${clima.icon}@2x.png`;
 			const resultado = await fetch(url);
 			setClimaIcon(resultado.url);
 		};
