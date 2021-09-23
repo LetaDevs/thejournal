@@ -1,0 +1,36 @@
+.main {
+	&__container {
+		width: $mobileWidth;
+		margin: 0 auto;
+		padding: 20px 0;
+		border-bottom: 2px solid $grayOne;
+
+		@include mq($ipad) {
+			width: $ipadWidth;
+		}
+		@include mq($ipadPro) {
+			width: $ipadProWidth;
+		}
+		@include mq($desktop) {
+			width: $desktopWidth;
+		}
+	}
+
+	&__section-one {
+		@include mq($ipadPro) {
+			display: grid;
+			grid-template-columns: 4fr 2fr 2fr;
+			gap: 20px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $grayTwo;
+		}
+	}
+
+	&__section-two {
+		@include mq($ipadPro) {
+			padding: 20px 0;
+			display: flex;
+			gap: 20px;
+		}
+	}
+}

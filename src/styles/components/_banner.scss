@@ -1,0 +1,18 @@
+.banner {
+	&__container {
+		padding: 20px 0;
+		width: $mobileWidth;
+		margin: 0 auto;
+		border-bottom: 2px solid $grayOne;
+
+		@include mq($ipad) {
+			width: $ipadWidth;
+		}
+		@include mq($ipadPro) {
+			width: $ipadProWidth;
+		}
+		@include mq($desktop) {
+			width: $desktopWidth;
+		}
+	}
+}

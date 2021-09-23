@@ -1,0 +1,35 @@
+.noticia {
+	margin-bottom: 10px;
+
+	@include mq($ipadPro) {
+		margin-bottom: 0;
+	}
+
+	&__author {
+		text-transform: uppercase;
+		color: $grayTwo;
+		text-align: right;
+	}
+	&__link {
+		text-decoration: none;
+		color: $black;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__title {
+		line-height: 1.2;
+		margin: 10px 0;
+	}
+	&__description {
+		margin: 10px 0;
+	}
+	&__date {
+		color: $grayTwo;
+	}
+
+	&--border {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $grayTwo;
+	}
+}

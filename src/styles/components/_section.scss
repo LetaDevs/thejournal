@@ -1,0 +1,38 @@
+.section {
+	&__container {
+		width: $mobileWidth;
+		margin: 0 auto;
+		padding: 20px 0;
+
+		@include mq($ipad) {
+			width: $ipadWidth;
+		}
+		@include mq($ipadPro) {
+			width: $ipadProWidth;
+			border-bottom: 2px solid $grayOne;
+		}
+		@include mq($desktop) {
+			width: $desktopWidth;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__one {
+		@include mq($ipadPro) {
+			display: grid;
+			grid-template-columns: 4fr 3fr 3fr;
+			gap: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__two {
+		@include mq($ipadPro) {
+			display: flex;
+			gap: 10px;
+		}
+	}
+}
