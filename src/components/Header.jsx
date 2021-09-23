@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import moment from 'moment';
 
-const Header = () => {
+const Header = ({setBusqueda}) => {
 	const [userData, setUserData] = useState({});
 	const [clima, setClima] = useState({});
 	const [climaIcon, setClimaIcon] = useState('');
+
+	const [search, setSearch] = useState('');
 
 	useEffect(() => {
 		const obtenerDatos = async () => {
@@ -47,6 +49,15 @@ const Header = () => {
 		obtenerIcon();
 	}, [clima]);
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (search.trim() === '') return;
+
+		setBusqueda(search);
+		setSearch('');
+	};
+
 	return (
 		<header className='header'>
 			<nav className='nav'>
@@ -74,13 +85,15 @@ const Header = () => {
 			<div className='header__extras'>
 				<p className='header__extras-date'>{moment().format('dddd, LL')}</p>
 				<div className='header__extras-search'>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<input
 							type='text'
 							className='header__extras-search-input'
 							name='search'
+							value={search}
 							placeholder='ejem: coronavirus'
 							autoComplete='off'
+							onChange={(e) => setSearch(e.target.value)}
 						/>
 						<button type='submit' className='header__extras-search-btn'>
 							<i className='fas fa-search header__extras-search-icon'></i>

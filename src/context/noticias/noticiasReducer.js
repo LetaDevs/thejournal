@@ -5,6 +5,7 @@ import {
 	NOTICIAS_HEALTH,
 	NOTICIAS_ENTERTAINMENT,
 	NOTICIAS_TECHNOLOGY,
+	NOTICIAS_BUSQUEDA,
 } from '../../type';
 
 export default (state, action) => {
@@ -38,6 +39,15 @@ export default (state, action) => {
 			return {
 				...state,
 				technology: action.payload,
+			};
+		case NOTICIAS_BUSQUEDA:
+			const actuales = state.general;
+			action.payload.forEach((noticia, index) => {
+				actuales[index] = noticia;
+			});
+			return {
+				...state,
+				general: actuales,
 			};
 
 		default:

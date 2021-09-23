@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import React, {useContext, useEffect, useState} from 'react';
+import {useParams, useHistory} from 'react-router-dom';
 import {noticiasContext} from '../context/noticias/NoticiasProvider';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
@@ -13,6 +13,7 @@ import {
 	NOTICIAS_HEALTH,
 	NOTICIAS_ENTERTAINMENT,
 	NOTICIAS_TECHNOLOGY,
+	NOTICIAS_BUSQUEDA,
 } from '../type';
 import Criptos from '../components/Criptos';
 import Safari from '../components/Safari';
@@ -22,9 +23,16 @@ import Footer from '../components/Footer';
 const Home = () => {
 	const {dispatch} = useContext(noticiasContext);
 
+	const [busqueda, setBusqueda] = useState('');
+
 	const {country} = useParams();
+	const history = useHistory();
 
 	useEffect(() => {
+		if (country !== 'us' && country !== 'ca' && country !== 'co' && country !== 'mx' && country !== 'ar') {
+			return history.push('/co');
+		}
+
 		const obtenerNoticias = async () => {
 			const general = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=general`;
 			const sports = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&category=sports`;
@@ -75,9 +83,24 @@ const Home = () => {
 		obtenerNoticias();
 	}, [country]);
 
+	useEffect(() => {
+		if (busqueda === '') return;
+
+		const buscarNoticias = async () => {
+			const url = `${process.env.REACT_APP_NOTICIAS_API}/noticias?country=${country}&q=${busqueda}`;
+			const resultado = await fetch(url).then((data) => data.json());
+			console.log(resultado);
+			dispatch({
+				type: NOTICIAS_BUSQUEDA,
+				payload: resultado.noticias,
+			});
+		};
+		buscarNoticias();
+	}, [busqueda]);
+
 	return (
 		<div className='home'>
-			<Header />
+			<Header setBusqueda={setBusqueda} />
 			<Criptos />
 			<Main />
 			<Seccion category='sports' />
